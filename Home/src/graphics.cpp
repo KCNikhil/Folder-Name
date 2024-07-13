@@ -3,14 +3,11 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
-#include <Windows.h>
 
 #define MAX_ASTEROIDS 5
 #define PLAYER_SPEED 10
-#define BULLET_SPEED 49
-#define ASTEROID_SPEED 5 // Increased asteroid speed
-#define MAX_BULLETS 10
-#define BULLET_DELAY 10
+#define BULLET_SPEED 10
+#define ASTEROID_SPEED 5
 
 struct Asteroid {
     int x, y;
@@ -30,7 +27,8 @@ bool isRightKeyPressed();
 bool isSpaceKeyPressed();
 
 int main() {
-    initwindow(getmaxwidth(), getmaxheight());
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "");
 
     screenWidth = getmaxx();
     screenHeight = getmaxy();
@@ -40,8 +38,8 @@ int main() {
     int playerSize = screenWidth / 20;
     int playerX = screenWidth / 2 - playerSize / 2, playerY = screenHeight - playerSize - 20;
 
-    int bullets[MAX_BULLETS][3];
-    for (int i = 0; i < MAX_BULLETS; ++i) {
+    int bullets[MAX_ASTEROIDS][3];
+    for (int i = 0; i < MAX_ASTEROIDS; ++i) {
         bullets[i][2] = 0;
     }
 
@@ -72,7 +70,7 @@ int main() {
             }
         }
         if (isSpaceKeyPressed()) {
-            for (int i = 0; i < MAX_BULLETS; ++i) {
+            for (int i = 0; i < MAX_ASTEROIDS; ++i) {
                 if (bullets[i][2] == 0) {
                     bullets[i][0] = playerX + playerSize / 2;
                     bullets[i][1] = playerY - playerSize / 2;
@@ -82,7 +80,7 @@ int main() {
             }
         }
 
-        for (int i = 0; i < MAX_BULLETS; ++i) {
+        for (int i = 0; i < MAX_ASTEROIDS; ++i) {
             if (bullets[i][2] == 1) {
                 drawBullet(bullets[i][0], bullets[i][1], 5);
                 bullets[i][1] -= BULLET_SPEED;
@@ -116,7 +114,7 @@ int main() {
             }
         }
 
-        delay(20); // Reduced delay for smoother gameplay
+        delay(20); // Adjust delay for smoother gameplay
     }
 
     closegraph();
