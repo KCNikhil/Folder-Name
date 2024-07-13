@@ -1,9 +1,9 @@
-# Graphics library setup 
+# Graphics library setup
 
 ## Quick setup
 
 ```bash
-git clone https://github.com/ullaskunder3/graphics.h-project-template.git
+git clone https://github.com/KCNikhil/Graphics_Project.git
 ```
 
 Detail setup can be found on my other repo [solution-to-graphics.h](https://github.com/ullaskunder3/Solution-to-graphics.h)
@@ -13,7 +13,7 @@ Detail setup can be found on my other repo [solution-to-graphics.h](https://gith
 ```cmd
   D:.
 ├───.vscode
-└───Home
+└───Game
     ├───build
     └───src
 ```
