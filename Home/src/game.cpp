@@ -8,9 +8,9 @@
 #include <algorithm> // Include the algorithm header for std::min
 
 #define MAX_ASTEROIDS 8
-#define PLAYER_SPEED 10
-#define BULLET_SPEED 49 // Increased bullet speed
-#define ASTEROID_SPEED 5
+#define PLAYER_SPEED 20
+#define BULLET_SPEED 49 
+#define ASTEROID_SPEED 8
 #define MAX_BULLETS 10
 #define BULLET_DELAY 10 // Delay in milliseconds between each bullet
 
